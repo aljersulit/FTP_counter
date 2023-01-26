@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        section {
+            background-color: rgb(245, 192, 18);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        article.counter--container {
+            width: 70vw;
+            height: 70vh;
+            border-radius: 2rem;
+            background-color: aliceblue;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 4rem;
+            margin-top: 2rem;
+        }
+
+        div.counter--wrapper {
+            background-color: rgb(83, 102, 119);
+            padding: 1rem 2rem;
+            width: 18.75rem;
+            margin: 2rem auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 1rem;
+            box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.8);
+            position: relative;
+        }
+
+        div.counter--wrapper > button {
+            width: 4rem;
+            height: 4rem;
+            font-size: 2rem;
+            cursor: pointer;
+            border-radius: 50%;
+            border: 1px solid whitesmoke;
+            box-shadow: 2px 3px 6px rgba(0, 0, 0, 0.8);
+        }
+
+        div.counter--wrapper > button:active {
+            transform: translateY(1px);
+            box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.8);
+        }
+
+        div.counter--wrapper > span {
+            font-size: 3rem;
+            font-weight: 700;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        @media screen and (max-width: 500px) {
+            html {
+                font-size: 3vw;
+            }
+
+            div.counter--wrapper {
+                margin: 10vh auto;
+            }
+        }
+
+
+    </style>
+</head>
+<body>
+    <section>
+        <article class="counter--container">
+            <h1>Counter</h1>
+            <div class="counter--wrapper">
+                <button onclick="decrement()">
+                    −
+                </button>
+                <span id="count">0</span>
+                <button onclick="increment()">
+                    +
+                </button>
+            </div>
+        </article>
+    </section>
+
+
+    <!-- JAVASCRIPT -->
+    <script>
+        let defaultCount = 0;
+        const count = document.getElementById("count");
+
+        const increment = () => {
+            defaultCount++;
+            count.textContent = defaultCount;
+        }
+
+        const decrement = () => {
+            defaultCount--;
+            count.textContent = defaultCount;
+        }
+    </script>
+</body>
+</html>
